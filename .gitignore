@@ -1,0 +1,4 @@
+puzzles.private.json
+*.private.json
+.DS_Store
+Thumbs.db

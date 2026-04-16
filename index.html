@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <title>DomeOSl</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="terminal-shell" aria-label="DomeOS Ward Terminal">
+      <header class="terminal-header">
+        <img class="signal-mark" src="assets/combine.svg" alt="">
+        <div class="header-copy">
+          <p class="eyebrow">OVERWATCH MEDICAL DOME</p>
+          <h1>DomeOS</h1>
+        </div>
+        <button class="status-pill audio-toggle" id="audio-toggle" type="button">sound: autoplay</button>
+      </header>
+
+      <section class="terminal-screen" aria-live="polite">
+        <div id="terminal-output" class="terminal-output"></div>
+        <form id="terminal-form" class="terminal-form" autocomplete="off">
+          <label class="prompt-label" for="terminal-input">&gt;</label>
+          <input
+            id="terminal-input"
+            name="command"
+            type="text"
+            spellcheck="false"
+            autocapitalize="none"
+            autocomplete="off"
+            aria-label="Terminal command"
+          >
+        </form>
+      </section>
+    </main>
+
+    <audio id="music-bed" src="assets/asylumradio.mp3" autoplay loop preload="auto"></audio>
+    <script src="game.js" defer></script>
+  </body>
+</html>
