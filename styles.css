@@ -12,6 +12,10 @@
   --muted: #5aa866;
   --warn: #a7e86e;
   --error: #ff5656;
+  --blood-dark: rgba(58, 0, 0, 0.72);
+  --blood: rgba(132, 4, 4, 0.54);
+  --blood-wet: rgba(210, 13, 13, 0.34);
+  --blood-overlay: url("assets/blood-splatter.png");
 }
 
 * {
@@ -40,9 +44,14 @@ body::before {
   inset: 0;
   pointer-events: none;
   background:
+    var(--blood-overlay) center center / min(760px, 94vw) auto no-repeat,
+    radial-gradient(ellipse at 13% 18%, rgba(112, 0, 0, 0.1), transparent 16rem),
+    radial-gradient(ellipse at 86% 74%, rgba(74, 0, 0, 0.12), transparent 18rem),
     radial-gradient(circle at 50% 45%, rgba(100, 255, 111, 0.07), transparent 33rem),
     repeating-linear-gradient(0deg, rgba(100, 255, 111, 0.035) 0 1px, transparent 1px 6px);
-  opacity: 0.72;
+  opacity: 0.085;
+  mix-blend-mode: screen;
+  animation: room-voltage 9s infinite steps(1);
 }
 
 body::after {
@@ -51,8 +60,11 @@ body::after {
   inset: 0;
   pointer-events: none;
   background:
+    linear-gradient(107deg, transparent 0 8%, rgba(112, 0, 0, 0.09) 8.5% 9.4%, transparent 10%),
+    linear-gradient(84deg, transparent 0 91%, rgba(92, 0, 0, 0.12) 91.4% 92.5%, transparent 93%),
     linear-gradient(90deg, transparent 0 17%, rgba(100, 255, 111, 0.018) 18%, transparent 19%),
     linear-gradient(90deg, transparent 0 63%, rgba(100, 255, 111, 0.016) 64%, transparent 65%);
+  mix-blend-mode: screen;
 }
 
 .terminal-shell {
@@ -67,12 +79,16 @@ body::after {
   border: 1px solid var(--green-line);
   border-radius: 0;
   background:
+    linear-gradient(173deg, transparent 0 12%, rgba(58, 0, 0, 0.34) 12.4% 12.9%, transparent 13.3%),
     linear-gradient(180deg, rgba(100, 255, 111, 0.055), transparent 26%),
     repeating-linear-gradient(90deg, transparent 0 17px, rgba(100, 255, 111, 0.025) 18px, transparent 19px),
     var(--shell);
   box-shadow:
-    0 0 38px rgba(100, 255, 111, 0.18),
+    -9px 7px 0 rgba(35, 0, 0, 0.42),
+    0 0 48px rgba(100, 255, 111, 0.22),
+    0 0 20px rgba(126, 0, 0, 0.26),
     inset 0 0 0 1px rgba(100, 255, 111, 0.12),
+    inset 0 0 0 6px rgba(0, 0, 0, 0.5),
     inset 0 0 80px rgba(0, 0, 0, 0.9);
 }
 
@@ -83,7 +99,18 @@ body::after {
   z-index: 4;
   pointer-events: none;
   border: 1px solid rgba(100, 255, 111, 0.13);
-  box-shadow: inset 0 0 28px rgba(100, 255, 111, 0.055);
+  background:
+    var(--blood-overlay) center 2% / min(880px, 102%) auto no-repeat,
+    linear-gradient(180deg, transparent 0 8%, rgba(196, 0, 0, 0.18) 8.4% 8.8%, transparent 9.4%),
+    linear-gradient(92deg, transparent 0 4%, rgba(94, 0, 0, 0.5) 4.2% 4.7%, transparent 5.1%),
+    radial-gradient(ellipse at 18% 0%, rgba(155, 0, 0, 0.24) 0 1.7rem, transparent 5.5rem),
+    radial-gradient(ellipse at 82% 100%, rgba(82, 0, 0, 0.2) 0 2.4rem, transparent 7rem);
+  background-blend-mode: screen, normal, normal, normal, normal;
+  mix-blend-mode: screen;
+  opacity: 0.095;
+  box-shadow:
+    inset 0 0 28px rgba(100, 255, 111, 0.055),
+    inset 0 0 42px rgba(91, 0, 0, 0.28);
 }
 
 .terminal-shell::after {
@@ -93,9 +120,15 @@ body::after {
   z-index: 5;
   pointer-events: none;
   background:
+    var(--blood-overlay) center 28% / min(960px, 112%) auto no-repeat,
+    linear-gradient(178deg, transparent 0 18%, rgba(193, 0, 0, 0.16) 18.4% 18.8%, transparent 19.3%),
+    linear-gradient(88deg, transparent 0 2%, rgba(122, 0, 0, 0.32) 2.3% 2.8%, transparent 3.3%),
     linear-gradient(92deg, transparent 0 77%, rgba(100, 255, 111, 0.035) 78%, transparent 79%),
     repeating-linear-gradient(0deg, transparent 0 54px, rgba(100, 255, 111, 0.026) 55px, transparent 57px);
-  opacity: 0.9;
+  background-blend-mode: screen, normal, normal, normal, normal;
+  mix-blend-mode: screen;
+  opacity: 0.07;
+  animation: shell-scratch 12s infinite steps(1);
 }
 
 .terminal-header {
@@ -106,6 +139,7 @@ body::after {
   padding: 7px 10px;
   color: var(--green-hot);
   background:
+    linear-gradient(181deg, rgba(91, 0, 0, 0.3) 0 2px, transparent 3px 100%),
     linear-gradient(180deg, rgba(100, 255, 111, 0.1), rgba(100, 255, 111, 0.025)),
     var(--black);
   border-bottom: 1px solid var(--green-line);
@@ -171,6 +205,7 @@ h1 {
   border-radius: 0;
   border: 1px solid rgba(100, 255, 111, 0.38);
   background:
+    linear-gradient(177deg, transparent 0 19%, rgba(105, 0, 0, 0.16) 19.3% 20.2%, transparent 20.6%),
     radial-gradient(circle at 50% 44%, rgba(100, 255, 111, 0.11), transparent 31rem),
     linear-gradient(180deg, rgba(100, 255, 111, 0.035), transparent 14%),
     var(--screen);
@@ -178,7 +213,9 @@ h1 {
     inset 0 0 85px rgba(0, 0, 0, 0.95),
     inset 0 0 18px rgba(100, 255, 111, 0.18),
     0 0 24px rgba(100, 255, 111, 0.14);
-  animation: tube-flicker 7.5s infinite steps(1);
+  animation:
+    tube-flicker 4.2s infinite steps(1),
+    signal-warp 8.5s infinite steps(1);
 }
 
 .terminal-screen::before {
@@ -188,9 +225,12 @@ h1 {
   z-index: 3;
   pointer-events: none;
   background:
-    repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.42) 0 1px, rgba(100, 255, 111, 0.035) 1px 2px, transparent 2px 4px),
+    linear-gradient(180deg, transparent 0 7%, rgba(209, 0, 0, 0.12) 7.2% 7.7%, transparent 8.4%),
+    linear-gradient(96deg, transparent 0 31%, rgba(104, 0, 0, 0.17) 31.4% 32.4%, transparent 33%),
+    repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.54) 0 1px, rgba(100, 255, 111, 0.055) 1px 2px, transparent 2px 4px),
     repeating-linear-gradient(90deg, rgba(100, 255, 111, 0.032) 0 1px, transparent 1px 5px);
-  opacity: 0.78;
+  opacity: 0.9;
+  animation: scan-tear 2.7s infinite steps(1);
 }
 
 .terminal-screen::after {
@@ -203,19 +243,27 @@ h1 {
     linear-gradient(
       180deg,
       transparent 0%,
-      rgba(100, 255, 111, 0.06) 39%,
-      rgba(215, 255, 212, 0.28) 49%,
-      rgba(100, 255, 111, 0.08) 58%,
+      rgba(100, 255, 111, 0.1) 36%,
+      rgba(215, 255, 212, 0.42) 48%,
+      rgba(100, 255, 111, 0.13) 60%,
       transparent 100%
     ),
+    linear-gradient(91deg, transparent 0 11%, rgba(172, 0, 0, 0.12) 11.3% 11.9%, transparent 12.5%),
     url("assets/combine.svg") right 18px bottom 18px / 170px 170px no-repeat;
-  opacity: 0.2;
+  opacity: 0.31;
+  background-repeat: no-repeat;
+  background-size: 100% 62%, 100% 100%, 170px 170px;
   filter: brightness(0) saturate(100%) invert(74%) sepia(100%) saturate(493%) hue-rotate(54deg) brightness(105%) contrast(96%);
-  animation: crt-scan 4.8s linear infinite;
+  animation:
+    crt-scan 2.7s linear infinite,
+    phosphor-panic 5.2s infinite steps(1);
 }
 
 .screen-jolt .terminal-screen {
-  animation: hard-jolt 150ms steps(2), tube-flicker 7.5s infinite steps(1);
+  animation:
+    hard-jolt 210ms steps(2),
+    tube-flicker 4.2s infinite steps(1),
+    signal-warp 8.5s infinite steps(1);
 }
 
 .terminal-output {
@@ -230,6 +278,7 @@ h1 {
   text-shadow:
     0 0 4px rgba(100, 255, 111, 0.9),
     0 0 12px rgba(100, 255, 111, 0.2);
+  animation: text-breathe 3.6s infinite steps(1);
 }
 
 .terminal-output::-webkit-scrollbar {
@@ -544,50 +593,71 @@ h1 {
   background: var(--green);
 }
 
-@keyframes crt-scan {
-  0% {
-    background-position: center -95vh, right 18px bottom 18px;
-  }
-
-  100% {
-    background-position: center 115vh, right 18px bottom 18px;
-  }
-}
-
 @keyframes tube-flicker {
   0%,
-  12%,
+  8%,
   100% {
     filter: brightness(1) contrast(1.08);
     transform: translate(0, 0);
   }
 
-  13% {
-    filter: brightness(1.18) contrast(1.2);
+  9% {
+    filter: brightness(1.34) contrast(1.45) saturate(1.12);
+    transform: translate(2px, 0);
   }
 
-  14% {
-    filter: brightness(0.92) contrast(1.35);
+  10% {
+    filter: brightness(0.54) contrast(1.7);
+    transform: translate(-3px, 1px);
+  }
+
+  11% {
+    filter: brightness(1.08) contrast(1.22);
+    transform: translate(0, 0);
   }
 
   47% {
-    transform: translate(1px, 0);
+    transform: translate(3px, 0) skewX(0.15deg);
+    filter: brightness(1.2) contrast(1.36);
   }
 
   48% {
-    transform: translate(-1px, 0);
+    transform: translate(-4px, 0) skewX(-0.2deg);
+    filter: brightness(0.72) contrast(1.54);
   }
 
   49% {
     transform: translate(0, 0);
+    filter: brightness(1.02) contrast(1.15);
+  }
+
+  62% {
+    filter: brightness(1.58) contrast(1.7);
+    transform: translate(0, -1px);
+  }
+
+  63% {
+    filter: brightness(0.38) contrast(1.9);
+    transform: translate(5px, 1px);
+  }
+
+  64% {
+    filter: brightness(1.06) contrast(1.2);
+    transform: translate(0, 0);
   }
 
   77% {
-    filter: brightness(1.1) contrast(1.18);
+    filter: brightness(1.28) contrast(1.42);
   }
 
   78% {
-    filter: brightness(0.96) contrast(1.26);
+    filter: brightness(0.66) contrast(1.65);
+    transform: translate(-2px, 0);
+  }
+
+  79% {
+    filter: brightness(1) contrast(1.12);
+    transform: translate(0, 0);
   }
 }
 
@@ -597,11 +667,13 @@ h1 {
   }
 
   40% {
-    transform: translate(3px, -1px);
+    transform: translate(8px, -2px) skewX(0.6deg);
+    filter: brightness(1.65) contrast(1.8);
   }
 
   70% {
-    transform: translate(-3px, 1px);
+    transform: translate(-9px, 2px) skewX(-0.7deg);
+    filter: brightness(0.45) contrast(2);
   }
 
   100% {
@@ -609,9 +681,214 @@ h1 {
   }
 }
 
+@keyframes crt-scan {
+  0% {
+    background-position: center -70%, 0 0, right 18px bottom 18px;
+    filter: brightness(0) saturate(100%) invert(74%) sepia(100%) saturate(493%) hue-rotate(54deg) brightness(105%) contrast(96%);
+  }
+
+  38% {
+    background-position: center 34%, 7px 0, right 18px bottom 18px;
+  }
+
+  39% {
+    background-position: 12px 35%, -9px 0, right 18px bottom 18px;
+    filter: brightness(0) saturate(100%) invert(88%) sepia(100%) saturate(493%) hue-rotate(54deg) brightness(128%) contrast(120%);
+  }
+
+  40% {
+    background-position: -9px 36%, 5px 0, right 18px bottom 18px;
+  }
+
+  100% {
+    background-position: center 145%, 0 0, right 18px bottom 18px;
+    filter: brightness(0) saturate(100%) invert(74%) sepia(100%) saturate(493%) hue-rotate(54deg) brightness(105%) contrast(96%);
+  }
+}
+
+@keyframes scan-tear {
+  0%,
+  18%,
+  100% {
+    transform: translate(0, 0);
+    opacity: 0.88;
+  }
+
+  19% {
+    transform: translate(12px, 0) skewX(0.35deg);
+    opacity: 1;
+  }
+
+  20% {
+    transform: translate(-9px, 0) skewX(-0.28deg);
+    opacity: 0.72;
+  }
+
+  53% {
+    transform: translate(0, -2px);
+    opacity: 1;
+  }
+
+  54% {
+    transform: translate(-15px, 2px) skewX(-0.4deg);
+    opacity: 0.64;
+  }
+
+  55% {
+    transform: translate(4px, 0);
+    opacity: 0.94;
+  }
+
+  81% {
+    transform: translate(9px, 1px);
+    opacity: 1;
+  }
+
+  82% {
+    transform: translate(-7px, -1px);
+    opacity: 0.78;
+  }
+}
+
+@keyframes signal-warp {
+  0%,
+  100% {
+    border-color: rgba(100, 255, 111, 0.38);
+    box-shadow:
+      inset 0 0 85px rgba(0, 0, 0, 0.95),
+      inset 0 0 18px rgba(100, 255, 111, 0.18),
+      0 0 24px rgba(100, 255, 111, 0.14);
+  }
+
+  22% {
+    border-color: rgba(215, 255, 212, 0.58);
+    box-shadow:
+      inset 0 0 110px rgba(0, 0, 0, 0.98),
+      inset 0 0 28px rgba(100, 255, 111, 0.32),
+      0 0 38px rgba(100, 255, 111, 0.22),
+      0 0 18px rgba(168, 0, 0, 0.18);
+  }
+
+  23% {
+    border-color: rgba(119, 9, 9, 0.72);
+    box-shadow:
+      inset 0 0 120px rgba(0, 0, 0, 1),
+      inset 0 0 16px rgba(100, 255, 111, 0.1),
+      0 0 17px rgba(100, 255, 111, 0.08),
+      0 0 25px rgba(168, 0, 0, 0.26);
+  }
+
+  71% {
+    border-color: rgba(100, 255, 111, 0.75);
+  }
+}
+
+@keyframes phosphor-panic {
+  0%,
+  100% {
+    opacity: 0.29;
+  }
+
+  10% {
+    opacity: 0.52;
+  }
+
+  11% {
+    opacity: 0.08;
+  }
+
+  12% {
+    opacity: 0.34;
+  }
+
+  48% {
+    opacity: 0.66;
+  }
+
+  49% {
+    opacity: 0.12;
+  }
+
+  64% {
+    opacity: 0.46;
+  }
+}
+
+@keyframes text-breathe {
+  0%,
+  100% {
+    filter: none;
+  }
+
+  18% {
+    filter: brightness(1.18);
+  }
+
+  19% {
+    filter: brightness(0.78);
+  }
+
+  57% {
+    filter: brightness(1.24) contrast(1.16);
+  }
+
+  58% {
+    filter: brightness(0.88);
+  }
+}
+
+@keyframes shell-scratch {
+  0%,
+  100% {
+    opacity: 0.07;
+    transform: translate(0, 0);
+  }
+
+  35% {
+    opacity: 0.105;
+    transform: translate(1px, 0);
+  }
+
+  36% {
+    opacity: 0.045;
+    transform: translate(-1px, 0);
+  }
+
+  37% {
+    opacity: 0.07;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes room-voltage {
+  0%,
+  100% {
+    opacity: 0.085;
+  }
+
+  44% {
+    opacity: 0.12;
+  }
+
+  45% {
+    opacity: 0.045;
+  }
+
+  46% {
+    opacity: 0.095;
+  }
+
+  74% {
+    opacity: 0.06;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .terminal-screen,
+  .terminal-screen::before,
   .terminal-screen::after,
+  .terminal-output,
+  body::before,
   .screen-jolt .terminal-screen {
     animation: none;
   }

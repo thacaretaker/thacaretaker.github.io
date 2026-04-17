@@ -60,11 +60,13 @@
         "Name appears manually rearranged before the last archive seal.",
         "",
         "Encrypted records:",
+        "  interviews     type: lexical lock / separate directory",
         "  psych-eval      type: lexical lock",
         "  circulation     type: node bridge",
         "  transfer        type: lexical lock",
         "  relay-grid      type: node bridge",
         "",
+        "Interview archive: hack interviews",
         "Begin with: hack psych-eval",
         "Use scan to inspect active locks.",
       ].join("\n"),
@@ -87,6 +89,264 @@
   });
 
   const reportFiles = Object.freeze({
+    interviews: {
+      files: [
+        {
+          path: `${patientRoot}/interviews/index.txt`,
+          title: "P377_INTERVIEW_INDEX",
+          content: [
+            "[P-377 / interview archive]",
+            "",
+            "Directory seal broken.",
+            "Transcripts recovered from infirmary recorder buffer.",
+            "",
+            "Readable files:",
+            `  ${patientRoot}/interviews/interview-01.txt`,
+            `  ${patientRoot}/interviews/interview-02.txt`,
+            `  ${patientRoot}/interviews/interview-03.txt`,
+            `  ${patientRoot}/interviews/interview-04.txt`,
+            "",
+            "All available interview records restored.",
+          ].join("\n"),
+        },
+        {
+          path: `${patientRoot}/interviews/interview-01.txt`,
+          title: "P377_INTERVIEW_01",
+          content: [
+            "FILE I - BEHAVIORAL MEDICINE INTERVIEW RECORD",
+            "Subject: alec-b-wreelan",
+            "Attending Physician: Dr. K. Sandoz",
+            "Location: Central Medical Annex, Chamber 4",
+            "Classification: Internal / Restricted",
+            "Purpose: Review of subject's general condition, executive stability, and reflective capacity regarding the state of the Dome and the city.",
+            "",
+            "Intake Observation",
+            "",
+            "Subject presented ambulatory with assistance. Posture stooped. Gait slow, guarded, and intermittently unstable. Bilateral hand tremor present at rest. Marked periorbital discoloration. Eyes injected. Speech initially measured though delayed. Clothing and person kept in acceptable order by staff intervention. Affect constricted. Subject appeared physically depleted but cognitively available for questioning.",
+            "",
+            "Subject tolerated intake poorly when asked to sit beneath direct examination lighting and requested dimming of the overhead fixture due to headache and visual strain. Respiratory effort shallow but regular. No overt psychotic features observed during the first five minutes of contact.",
+            "",
+            "Clinical Summary",
+            "",
+            "Interview conducted to assess subject's evolving understanding of his personal condition and his appraisal of current civic deterioration. Subject remains oriented to person, place, institutional function, and broad chronology of recent collapse events. He demonstrates intact recall of sector failures, shortages, pressure losses within the Dome, and depletion of urban protections. Insight into his own role in these conditions is present, though emotionally blunted.",
+            "",
+            "When discussing the city, subject did not describe it as recoverable in any ordinary sense. He characterized present civic life as an administered delay of terminal decline. When discussing the atmospheric Dome, subject referred to it not as a solution but as a constructed reprieve. He acknowledged direct involvement in prior strategic decisions that narrowed access to safety, heat, and continuity of service. No effort was made to evade authorship.",
+            "",
+            "Subject showed visible autonomic stress when asked whether he regretted these decisions. Pulse rose. Lower jaw tension increased. Silence extended beyond ordinary response latency before answer was given.",
+            "",
+            "Transcript Excerpt",
+            "",
+            "Dr. K. Sandoz: State your condition in your own words.",
+            "Alec: I am tired in the marrow. I am held together by remedies and instruments and by the faith of men who have no reason left for faith. There are mornings I wake and cannot tell if I have slept or only gone absent a while.",
+            "",
+            "Dr. K. Sandoz: Are you in pain.",
+            "Alec: Pain is no longer a thing with edges. It is a weather. It settles over the nerves and remains.",
+            "",
+            "Dr. K. Sandoz: What do you think of the city's present condition.",
+            "Alec: It survives. That is not the same as living. The wards still breathe and the lights still burn in certain sectors and the old women still line for mash with their pans in hand, so the clerks call that continuity. But the city has become a vessel for delay. A great bowl set beneath the sky to catch the last poor drippings of our continuance.",
+            "",
+            "Dr. K. Sandoz: And the Dome.",
+            "Alec: The Dome was meant to be covenant and machine both. Our second atmosphere. A shield against poison, cold, famine, the dead. We built it as men build cathedrals in an age with no god left in it. We built it because there was nothing else to build.",
+            "",
+            "Dr. K. Sandoz: Do you believe your decisions brought the city here.",
+            "Alec: Belief has little to do with it. I signed orders. I opened gates and sealed others. I sent men out and called none back when the winds changed. I told them sacrifice was arithmetic and that history would pardon the necessary cruelty. Perhaps history will. The buried are often generous.",
+            "",
+            "Dr. K. Sandoz: Do you regret it.",
+            "Alec: Regret is a luxury of those afforded alternatives. I had choices, yes, but never clean ones. Never good ones. Only doors of differing blackness. Yet I will say this. The city has my fingerprint on its throat. That much is plain.",
+            "",
+            "Dr. K. Sandoz: Do you still believe it can be saved.",
+            "Alec: Saved. No. Prolonged perhaps. Managed. Persuaded to continue a while longer in spite of itself. That is the work now. Not salvation. Endurance.",
+            "",
+            "Assessment",
+            "",
+            "Thought process coherent and sequential. No evidence in this session of active hallucinosis or frank delusional disorganization. Mood depressed. Affect flattened though not vacant. Subject demonstrates grave psychological fatigue, intact abstract reasoning, and persistent preoccupation with terminal administration rather than recovery.",
+            "",
+            "Impression",
+            "",
+            "Advanced depressive exhaustion in the setting of systemic collapse, bodily decline, and cumulative moral injury. Subject remains interviewable and operationally intelligible, though diminished.",
+          ].join("\n"),
+        },
+        {
+          path: `${patientRoot}/interviews/interview-02.txt`,
+          title: "P377_INTERVIEW_02",
+          content: [
+            "FILE II - PRE-TREATMENT PSYCHIATRIC CLEARANCE INTERVIEW",
+            "Subject: alec-b-wreelan",
+            "Attending Physician: Dr. K. Sandoz",
+            "Location: Preoperative Holding, Lower Medical Wing",
+            "Classification: Restricted / Treatment Relevant",
+            "Purpose: Assessment of treatment readiness, decisional capacity, and identity continuity concerns prior to intervention.",
+            "",
+            "Intake Observation",
+            "",
+            "Subject received in treatment garment while under active preoperative preparation. Skin pale and cool. Light diaphoresis at scalp and neck. Subject required seated stabilization twice before interview proceeded. Repeated manual contact with the temples and posterior cervical region observed throughout questioning. Speech intact, articulate, and lower in volume than baseline historical records suggest. Eye contact intermittent but purposeful.",
+            "",
+            "No coercive measures required. Subject stated he understood that interview content would be recorded into the treatment file.",
+            "",
+            "Clinical Summary",
+            "",
+            "Session focused on subject's understanding of proposed intervention and his mental condition as he prepares for treatment. Subject demonstrated clear procedural understanding. He recognizes the possibility of bodily preservation without full identity continuity. This concern has become central to his psychological state.",
+            "",
+            "Subject did not emphasize fear of physical pain. He instead returned repeatedly to the prospect of survival without intact memory, authority, or self-recognition. He appears to regard continuity of mind as his last meaningful possession. He further indicated awareness that he may persist only as symbolic utility if treatment succeeds only partially.",
+            "",
+            "Despite exhaustion and obvious apprehension, subject remained legally and clinically competent to consent at time of interview. No evidence of forced ideation, formal thought disorder, or externalized paranoia observed during this session.",
+            "",
+            "Transcript Excerpt",
+            "",
+            "Dr. K. Sandoz: We are making final preparations. Do you understand the procedure.",
+            "Alec: I understand what is said of it. Whether a man may be truly carried from one ruin into another and remain the same man afterward is not a question your instruments can answer.",
+            "",
+            "Dr. K. Sandoz: Do you wish to proceed.",
+            "Alec: Wish has left the building. There is only consent under pressure.",
+            "",
+            "Dr. K. Sandoz: Are you afraid.",
+            "Alec: Of pain, no. Of diminishment, yes. Of waking in a body that does not know me. Of memory dislodged. Of speech without meaning. Of seeing the faces of my staff and knowing them only as shapes once associated with command. There are humiliations worse than death.",
+            "",
+            "Dr. K. Sandoz: You've asked repeatedly about continuity.",
+            "Alec: Because continuity is the last property I possess. The city no longer listens with conviction. The guards obey but their eyes are elsewhere. The reserves grumble in the food lines. The Dome cracks and ices over and the sectors brown out by rotation. If I lose continuity then I become a rumor housed in meat. A relic animated for the reassurance of fools.",
+            "",
+            "Dr. K. Sandoz: Do you consider yourself fit for this burden.",
+            "Alec: Burden. You speak as though there were honor in it. There is only necessity. A man too stubborn to die when perhaps decency would ask it of him.",
+            "",
+            "Dr. K. Sandoz: What would you say to the people if they heard this.",
+            "Alec: I would tell them to mend the seals and clear the drains and stop stealing coal from the heating hoppers. I would tell them the truth has become a corrosive substance and I no longer dispense it.",
+            "",
+            "Dr. K. Sandoz: Final question. Who are you now.",
+            "Alec: A custodian of a failing sphere. A patient. A name on old directives. A man being measured for replacement.",
+            "",
+            "Assessment",
+            "",
+            "Subject demonstrates full awareness of treatment stakes and likely consequences. Mood profoundly depressed. Anxiety high, but remains contained within coherent thought. Identity destabilization anticipated post-procedure regardless of technical success.",
+            "",
+            "Impression",
+            "",
+            "Psychiatric clearance may proceed. Elevated risk for post-treatment derealization, self-alienation, despair response, and executive fragmentation.",
+          ].join("\n"),
+        },
+        {
+          path: `${patientRoot}/interviews/interview-03.txt`,
+          title: "P377_INTERVIEW_03",
+          content: [
+            "FILE III - ACUTE COMMAND-RELATED AGITATION INTERVIEW",
+            "Subject: alec-b-wreelan",
+            "Attending Physician: Dr. K. Sandoz",
+            "Witness: Administrative Recorder, Lower Dome Authority",
+            "Location: Observation Cell B",
+            "Classification: High Priority / Command Relevance",
+            "Purpose: Clarification of prior directives relating to oxygen allocation, heating pump priorities, and ration service reductions.",
+            "",
+            "Intake Observation",
+            "",
+            "Subject entered session in visibly heightened state. Marked pacing prior to seating. Refused water. Sweating excessive despite low ambient temperature. Speech accelerated from outset. Repeated requests for infrastructure status updates interrupted staff attempts at redirection. Pupils widened. Fine tremor escalated to whole-hand clenching during discussion of supply distribution.",
+            "",
+            "By midpoint of session subject was intermittently laughing without affective congruence. Thought remained goal-directed but increasingly absolutist, severe, and morally denuded. No calming response to verbal reassurance.",
+            "",
+            "Clinical Summary",
+            "",
+            "Interview initiated to determine whether subject's standing orders regarding oxygen service, heat routing, and ration compression reflected intact triage reasoning or decompensating cognition. Subject's answers remained operationally intelligible but were delivered in an increasingly manic, punitive, and dehumanized register. He framed all allocation issues in terms of center preservation at the expense of peripheral survival. Civilian deprivation was discussed as arithmetic necessity rather than social consequence.",
+            "",
+            "Subject did not deny authorship of directives. Rather, he intensified them verbally. He repeatedly reduced human needs to variables within mechanical continuity. Notable rhetorical slippage occurred in the latter half of the session, with subject speaking as though the city's machinery and his own command voice were indistinguishable.",
+            "",
+            "Transcript Excerpt",
+            "",
+            "Dr. K. Sandoz: We need clarification on your standing directives regarding the oxygen machines.",
+            "Alec: Clarification. Yes. Because the machines love clarity. Because the scrubbers kneel before neat language and the tanks fill themselves when properly addressed. Listen to me. The oxygen is not merely consumed. It is hunted. Every cracked seal hunts it. Every bad valve. Every open mouth in Tier Six. Every child born against ration forecast. Every little thief with blue lips and a grandmother hidden under the stairs. The machines must favor the core sectors. That was always the order. The shell can complain into the frost.",
+            "",
+            "Dr. K. Sandoz: Are you confirming oxygen priority to central administrative wards.",
+            "Alec: I am confirming survival priority to the nerve center of the Dome. You do not preserve the toes when the brain is suffocating. This is elementary. This is priestly. This is geometry.",
+            "",
+            "Dr. K. Sandoz: What about the heating pumps. Several outlying quarters report deliberate shutoff.",
+            "Alec: Deliberate. Deliberate. As though I stood with gloved hand upon every switch in every freezing corridor. The pumps fail because men have failed and the pipes fail because the cold has a longer memory than we do. Heat must be directed where labor remains viable. Foundry galleries. Intake crews. Filter chambers. Let the idle learn blankets. Let them huddle and make theology of it.",
+            "",
+            "Dr. K. Sandoz: You signed the ration reductions.",
+            "Alec: I signed mathematics. There is not enough food. There has not been enough food for months and still they line up with their pans and their righteous faces and ask to be excused from hunger. Slop is food. Potatoes are food. Complaint is not. Reduce the ladles. Water it further if needed. Add starch. Grind old stock and call it meal. What do they think civilization is now. Silver domes and warm bread.",
+            "",
+            "Dr. K. Sandoz: People are rioting in the north service wards.",
+            "Alec: Of course they are rioting. That is what bellies do when promises run out. Beat them back from the hoppers. Keep the cooks guarded. Shoot one if the line breaks and drag him off before the others make a symbol of him.",
+            "",
+            "Dr. K. Sandoz: Alec, do you understand how these statements sound.",
+            "Alec: How they sound. They sound like a city speaking through a single throat gone bloody from the effort. They sound like triage. They sound like winter. You sit there wanting me gentle at the terminus of the species. There is no gentle left in the machinery. There is only allocation.",
+            "",
+            "Dr. K. Sandoz: Do you believe everyone under the Dome can still be saved.",
+            "Alec: Not everyone was ever included.",
+            "",
+            "Assessment",
+            "",
+            "Acute agitation with severe moral compression, grandiose administrative fusion, and manic hardening of judgment. Subject remains verbally coherent but increasingly detached from ordinary social valuation. No overt hallucinations elicited in this session, though thought content shows signs of emerging symbolic distortion.",
+            "",
+            "Impression",
+            "",
+            "Subject retains command logic but in progressively pathological form. Executive reasoning is narrowing into punitive triage ideology. High concern for further psychiatric decompensation.",
+          ].join("\n"),
+        },
+        {
+          path: `${patientRoot}/interviews/interview-04.txt`,
+          title: "P377_INTERVIEW_04",
+          content: [
+            "FILE IV - PSYCHIATRIC DETERIORATION INTERVIEW / HALLUCINATORY CONTENT",
+            "Subject: alec-b-wreelan",
+            "Attending Physician: Dr. K. Sandoz",
+            "Location: Containment Ward, Perimeter Medical Annex",
+            "Classification: Severe Cognitive Instability",
+            "Purpose: Evaluation of late-stage psychosis, persecutory ideation, and recurrent visual content involving the Combine and a hostile recurring figure.",
+            "",
+            "Intake Observation",
+            "",
+            "Recording commenced after subject had already begun speaking. Soft restraints were in place due to prior thrashing and attempted line removal. Voice strained but forceful. Facial musculature tense. Eyes fixed repeatedly toward empty corners of room and reflective surfaces. Subject frequently appeared to track motion not visible to staff. External structure noise from perimeter impact and storm load was audible throughout session.",
+            "",
+            "Subject was incapable of sustained eye contact with examiner for more than several seconds. Startle threshold low. He twice recoiled from the polished instrument tray despite no staff movement near it.",
+            "",
+            "Clinical Summary",
+            "",
+            "This session demonstrated clear progression from prior depressive exhaustion and manic severity into overt psychotic expression. Subject described a recurrent figure identified as a \"demented Entity,\" characterized by sunken eyes and malignant or \"dubious\" intentions. Subject did not describe the figure metaphorically. He treated its presence as immediate, persistent, and spatially real.",
+            "",
+            "When questioned about the Combine, subject's responses became highly associative, pulpy, grandiose, and disordered, though not entirely unintelligible. The Combine were described less as an army than as a totalizing system of spiritual and mechanical subjugation. Subject further suggested the Dome itself had become an instrument of their presence. He appeared unable to separate operational collapse, persecutory fear, and visionary content.",
+            "",
+            "Transcript Excerpt",
+            "",
+            "Alec: They said the sky would remember us. That was the first lie. The sky remembers nothing. Only the machines remember and they do so vindictively.",
+            "",
+            "Dr. K. Sandoz: Alec. Look at me. Can you tell me what you're seeing.",
+            "Alec: Him.",
+            "",
+            "Dr. K. Sandoz: Who.",
+            "Alec: The one with the drowned face. The demented Entity. Sunken eyes. Skin like paper left in bilgewater. He stands where walls meet shadow. He leans in the doorway though the doorway is sealed. He has the manners of an official and the appetite of a grave. Dubious intents. That is too mild for him. He has intents like hooks.",
+            "",
+            "Dr. K. Sandoz: Is this a man you know.",
+            "Alec: No man. Or once. Perhaps the Combine wore him down into shape. Perhaps they sent him ahead of themselves as an emissary from the mathematics of conquest. He waits beside the bed and says nothing because he knows I will supply the rest. I have been supplying the rest my whole life.",
+            "",
+            "Dr. K. Sandoz: There is no one there.",
+            "Alec: There is always someone there. That is the joke of command. Even in solitude you are attended. By ghosts. By auditors. By your own postponed cowardice. He watches from the corners. In the glass. In the silver backs of instruments. I close my eyes and he comes nearer because distance then belongs to him.",
+            "",
+            "Dr. K. Sandoz: Tell me about the Combine.",
+            "Alec: The Combine. Yes. Yes of course. Vast managers. Collectors of heat and bone and anthem. They move in the static between orders. Not soldiers. Not kings. Clerks of extinction. They inventory breath. They stamp the forehead of the world and call it governance. You think they arrive in ships. No. They arrive as permissions. As revised ledgers. As a new and inferior language taught to frightened men.",
+            "",
+            "Dr. K. Sandoz: Are they here now.",
+            "Alec: Here. Here. Where else would they be. In the pumps. In the ration slurry. In the black mold behind the oxygen housings. In the hiss inside the walls at night. They have threaded themselves through the Dome like wire through a carcass. The city is already a puppet and only waits for the hand.",
+            "",
+            "Dr. K. Sandoz: And this Entity. What does he want.",
+            "Alec: Me to look. That is all. To look and keep looking until I concede the likeness between us. He has my posture when I am tired. My smile when I lie. My eyes after three nights without rest. He is a receipt for the soul. A duplicate printed wet from some infernal office. I see him in the snow at the perimeter. I see him beneath the lamps in the treatment room. I see him standing among the citizens with his hat in hand as though petitioning for more soup.",
+            "",
+            "Dr. K. Sandoz: Alec, no one matching that description exists in this ward.",
+            "Alec: Then why does he know my name before I speak it. Why does he grin when the sirens start. Why does he whisper through the ventwork that the Dome was never a shelter but an incubator. Tell me that, doctor. Tell me why he says the blizzard outside is only the shaking of the globe before the child sets it down forever.",
+            "",
+            "Dr. K. Sandoz: Can you identify the date.",
+            "Alec: It is late. It is always late. The calendar is a butcher's apron. The hours come off in strips. Outside the necrotics press their faces flat to the shell. Inside the pipes cough and the people mutter in their sleep and the slop freezes in the ladles before it reaches the end of the line. The Combine kneel over the city like gamblers over a table and that thing with the sunken eyes keeps peering through me as if searching shelves in a ruined archive.",
+            "",
+            "Dr. K. Sandoz: Final note.",
+            "Alec: He is here now. He has come around behind you. Don't turn. He likes it when they turn.",
+            "",
+            "Assessment",
+            "",
+            "Overt visual hallucination versus fixed delirious perceptual system. Paranoid, symbolic, and self-referential thought content now pervasive. Subject no longer reliably distinguishes external reality from hallucinatory or internally generated presences. Language remains vivid and at times rhetorically structured, but coherence is significantly degraded.",
+            "",
+            "Impression",
+            "",
+            "Severe psychiatric collapse with active hallucinosis, persecutory ideation, identity fracture, and terminal cognitive destabilization. Subject is no longer a reliable narrator of external conditions, though his delusional content continues to incorporate real infrastructural decline.",
+          ].join("\n"),
+        },
+      ],
+    },
     "psych-eval": {
       path: `${patientRoot}/report-01-psych-eval.txt`,
       title: "P377_PSYCH_EVAL",
@@ -172,6 +432,14 @@
   });
 
   const hackPuzzles = Object.freeze({
+    interviews: {
+      title: "INTERVIEW_DIRECTORY_LEXICAL_LOCK",
+      target: "voices",
+      attempts: 4,
+      candidates: ["VOICES", "VOTIVE", "VISCUS", "VIRALS", "VICTIM", "VESSEL", "VIOLET", "VOLUME"],
+      unlocks: "interviews",
+      nextMessage: "interview directory decrypted. Transcript files restored.",
+    },
     "psych-eval": {
       title: "PSYCH_EVAL_LEXICAL_LOCK",
       target: "memory",
@@ -545,10 +813,19 @@
       state.unlockedReports.push(id);
     }
 
-    state.files[report.path] = {
-      title: report.title,
-      content: report.content,
-    };
+    if (Array.isArray(report.files)) {
+      for (const file of report.files) {
+        state.files[file.path] = {
+          title: file.title,
+          content: file.content,
+        };
+      }
+    } else {
+      state.files[report.path] = {
+        title: report.title,
+        content: report.content,
+      };
+    }
 
     if (id === "relay-grid") {
       state.victory = true;
@@ -556,7 +833,13 @@
 
     saveState();
     print(message || `${id} decrypted`, "success");
-    print(`restored: ${report.path}`, "success");
+    if (Array.isArray(report.files)) {
+      for (const file of report.files) {
+        print(`restored: ${file.path}`, "success");
+      }
+    } else {
+      print(`restored: ${report.path}`, "success");
+    }
   }
 
   function formatFileList() {
@@ -568,6 +851,9 @@
 
   function lockedRecords() {
     const records = [];
+    if (!hasReport("interviews")) {
+      records.push("interviews     LOCKED   lexical   hack interviews");
+    }
     if (!hasReport("psych-eval")) {
       records.push("psych-eval      LOCKED   lexical   hack psych-eval");
     }
@@ -672,6 +958,9 @@
   }
 
   function canHack(recordId) {
+    if (recordId === "interviews") {
+      return true;
+    }
     if (recordId === "psych-eval") {
       return true;
     }
@@ -1358,6 +1647,7 @@
       "cat /readme.txt",
       "cat /patients/index.txt",
       `cat ${patientRoot}/manifest.txt`,
+      "hack interviews ",
       "hack psych-eval ",
       "connect circulation ",
       "hack transfer ",
